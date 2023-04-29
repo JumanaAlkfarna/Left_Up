@@ -99,8 +99,8 @@ Route::prefix('cms/admin/')->group(function(){
     // Route::get('user/login' , [UserAuthController::class , 'showLoginUser'] )->name('view.login');
 // });
 // middleware('auth:user')->
-//
-Route::prefix('front/user')->middleware('auth:user')->group(function(){
+//middleware('auth:user')->
+Route::prefix('front/user')->group(function(){
     Route::get('',[HomeController::class,'home'])->name('website.index');
     Route::get('/register',[HomeController::class,'register'])->name('website.register');
 
