@@ -100,7 +100,7 @@ Route::prefix('cms/admin/')->group(function(){
 // });
 // middleware('auth:user')->
 //middleware('auth:user')->
-Route::prefix('front/user')->group(function(){
+Route::prefix('front/user')->middleware('auth:user')->group(function(){
     Route::get('',[HomeController::class,'home'])->name('website.index');
     Route::get('/register',[HomeController::class,'register'])->name('website.register');
 
