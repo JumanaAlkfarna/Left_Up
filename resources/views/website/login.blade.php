@@ -52,7 +52,7 @@
 
                             <div class="text-white text-center mt-4 ttext">
                                 <span>You do not have an account?</span>
-                                <a href="{{ route('users_create') }}" class="text-white ps-3">Register Now</a>
+                                <a href="{{ route('website.register') }}" class="text-white ps-3">Register Now</a>
                             </div>
                         </div>
 

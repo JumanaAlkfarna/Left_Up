@@ -24,4 +24,9 @@ class Car extends Model
     public function bookings(){
         return $this->hasMany(Booking::class);
     }
+
+    public function filters(){
+        return $this->hasMany(filter::class);
+    }
+
 }

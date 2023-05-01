@@ -1,5 +1,5 @@
 
-@extends('website.parent')
+@extends('website.langEn.parent')
 
 @section('title', 'Car Details')
 
@@ -54,9 +54,19 @@
                         <div class="en">
                             <h2 class="text-center my-2 add display-6">Add a car</h2>
                         </div>
+
                         <div class="row row-cols-1    row-cols-md-2 mx-auto ps-lg-5 ms-md-2">
                             <div class="col mb-md-5 mb-2  ">
                                 <div>
+
+                                    <div class="form-group col-md-6 ">
+                                        <label>رقم السيارة</label>
+                                        <select class="form-control select2" id="car_id" name="car_id" style="width: 100%;">
+                                            @foreach ($cars as $car)
+                                                <option value="{{ $car->id }}">{{ $car->id }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
                                     <div class="head">
                                         <label for="">Brand</label>
@@ -130,7 +140,7 @@
                                     Add a car
                                 </button>
                             </a> --}}
-                            <a href="{{ route('website.myCar') }}">
+                            <a href="{{ route('website.langEn.myCar') }}">
                                 <button class="btn">
                                     Turn back
                                 </button>
@@ -187,18 +197,18 @@
                                         <span class="avaTime">{{ $time->available_time }}</span>
                                         <span class="per">{{ $time->periodEn }}</span>
                                         {{-- <a href="{{ route('website.oil') }}"> --}}
-                                            @if ($time->bookingsCount >= 2)
+                                            {{-- @if ($time->bookingsCount >= 2) --}}
                                             {{-- cooenf --}}
-                                            <span>Full</span>
+                                            {{-- <span>Full</span> --}}
 
-                                            @else
+                                            {{-- @else --}}
                                             <button type="button" class="btn  me-auto BtnMain   "> Book Now <i
                                                 class="fa-solid fa-oil-can-drip "></i></button>
                                             {{-- </a> --}}
                                             <div class="form-group col-md-6 d-none">
                                                 <input type="text" value="{{ $time->id }}" class="form-control seven " name="time_id" id="time_id" placeholder="" >
                                             </div>
-                                           @endif
+                                           {{-- @endif --}}
                                         </h5>
 
 
@@ -224,14 +234,7 @@
         </div>
 
         <div class="tab-pane fade" id="pills-ff" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-            <div class="form-group col-md-6">
-                <label>رقم السيارة</label>
-                <select class="form-control select2" id="car_id" name="car_id" style="width: 100%;">
-                    @foreach ($cars as $car)
-                        <option value="{{ $car->id }}">{{ $car->id }}</option>
-                    @endforeach
-                </select>
-            </div>
+
 
             <div class="">
                 <div class="col-md-6 ">
@@ -253,10 +256,10 @@
 
 
                 <div class="card-footer foot text-center">
-                    <a href="{{ route('website.oil') }}">
+                    {{-- <a href="{{ route('website.langEn.oil') }}"> --}}
                     <button type="button" onclick="performStore()" class="btn btn-primary">confirmation <i class="fa-solid fa-arrow-right-long"></i></button>
                     {{-- <a href="{{ route('locations.index') }}" type="button" class="btn btn-info">Return Back</a> --}}
-                   </a>
+                   {{-- </a> --}}
                 </div>
         </div>
 
@@ -479,7 +482,7 @@
         // formData.append('cylinder', document.getElementById('cylinder').value);
 
         formData.append('time_id', document.getElementById('time_id').value);
-        formData.append('location', document.getElementById('pac-input').value);
+        formData.append('locationEn', document.getElementById('pac-input').value);
         formData.append('date', document.getElementById('date').value);
         // formData.append('user_id', document.getElementById('user_id').value);
         formData.append('car_id', document.getElementById('car_id').value);

@@ -17,7 +17,7 @@ class HomeController extends Controller
 {
     public function home(){
         $users = User::all();
-        return view('website.index' , compact('users'));
+        return view('website.langEn.index' , compact('users'));
     }
 
     public function register(){
@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function myCar(){
         $bookings = Booking::where('status' ,'wait');
 
-        return view('website.myCar' , compact('bookings'));
+        return view('website.langEn.myCar' , compact('bookings'));
     }
 
     public function carDetails(){
@@ -41,33 +41,21 @@ class HomeController extends Controller
         $bookings = Booking::all();
 
 
-        return view('website.carDetails',compact('times','cars','bookings'));
-    }
-
-    public function calender(){
-        return view('website.calender');
+        return view('website.langEn.carDetails',compact('times','cars','bookings'));
     }
 
 
-    public function time(){
-        $times = Time::all();
-        return view('website.time' ,  compact('times'));
-    }
+
 
     public function oil(){
         $oils = Oilcar::all();
         $oilTens = OilCar::all();
-        return view('website.oil' ,  compact('oils','oilTens'));
+        return view('website.langEn.oil' ,  compact('oils','oilTens'));
     }
 
     public function myBooking(){
         $bookings = Booking::where('status' ,'finish');
-        return view('website.myBooking' ,  compact('Booking'));
+        return view('website.langEn.myBooking' ,  compact('Booking'));
     }
 
-    public function location(){
-        $bookings = Booking::all();
-
-        return view('website.location' ,  compact('bookings'));
-    }
 }

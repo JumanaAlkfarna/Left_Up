@@ -8,7 +8,6 @@ use App\Models\Time;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
 class BookingController extends Controller
 {
     /**
@@ -26,9 +25,9 @@ class BookingController extends Controller
 
     public function indexToday()
     {
-        $bookings = Booking::where('date' , '=' , Carbon::today());
+        $bookings = Booking::wheredate('date' , '=' , Carbon::today())->paginate();
 
-        return view('bookings.index', compact('bookings'));
+        return view('cms.booking.index', compact('bookings'));
     }
     /**
      * Show the form for creating a new resource.
@@ -95,22 +94,11 @@ class BookingController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'time_id' => 'required|exists:times,id',
-            'date' => 'required|',
-            'location' => 'required',
-        ]);
 
-        // Check if the selected time is still available
-        $bookingsCount = Booking::where('time_id', $validatedData['time_id'])
-            ->where('date', $validatedData['date'])
-            ->where('location', $validatedData['location'])
-            ->count();
-        if ($bookingsCount >= 2) {
-            return redirect()->back()->with('error', 'Selected time is no longer available.');
-        }
+        $validator = Validator($request->all() , [
+            ] );
 
-
+            if(! $validator->fails()){
             $bookings = new Booking();
             // $bookings->brand = $request->get('brand');
             // $bookings->modeel = $request->get('modeel');
@@ -119,7 +107,9 @@ class BookingController extends Controller
 
             $bookings->date = $request->get('date');
             // $bookings->time = $request->get('time');
-            $bookings->location = $request->get('location');
+            $bookings->locationEn = $request->get('locationEn');
+            $bookings->locationAr = $request->get('locationAr');
+
             $bookings->user_id = auth()->user()->id;;
 
             $bookings->car_id = $request->get('car_id');
@@ -133,9 +123,14 @@ class BookingController extends Controller
 
             if($isSaved){
                 return response()->json(['icon' => 'success' , 'title' => "Created is Successfully"] , 200);
+                //return ['redirect' => route('website.langEn.oil')];
             }
             else{
                 return response()->json(['icon' => 'error' , 'title' => "Created is Failed"] , 400);
+            }
+        }else{
+            return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+
             }
 
     }

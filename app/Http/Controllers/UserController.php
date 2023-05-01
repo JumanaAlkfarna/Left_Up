@@ -46,8 +46,8 @@ class UserController extends Controller
              $users = new User();
              $users->first_name = $request->get('first_name');
              $users->last_name = $request->get('last_name');
-             $users->first_nameAr = $request->get('first_nameAr');
-             $users->last_nameAr = $request->get('last_nameAr');
+            //  $users->first_nameAr = $request->get('first_nameAr');
+            //  $users->last_nameAr = $request->get('last_nameAr');
              $users->mobile = $request->get('mobile');
              $users->email = $request->get('email');
              $users->password = Hash::make($request->get('password'));

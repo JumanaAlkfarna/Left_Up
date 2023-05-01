@@ -6,6 +6,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CylinderController;
 use App\Http\Controllers\FilterController;
+use App\Http\Controllers\FilterPriceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ModeelController;
@@ -78,6 +79,8 @@ Route::prefix('cms/admin/')->group(function(){
     Route::resource('users' , UserController::class);
     // Route::post('update-users/{id}' , [UserController::class , 'update'])->name('update-users');
 
+     Route::resource('filterprices' , FilterPriceController::class);
+    Route::post('update-filterprices/{id}' , [FilterPriceController::class , 'update'])->name('update-filterprices');
 
     // Route::resource('bookings' , BookingController::class);
     Route::resource('bookings' , BookingController::class);
@@ -99,32 +102,35 @@ Route::prefix('cms/admin/')->group(function(){
     // Route::get('user/login' , [UserAuthController::class , 'showLoginUser'] )->name('view.login');
 // });
 // middleware('auth:user')->
-//middleware('auth:user')->
-Route::prefix('front/user')->middleware('auth:user')->group(function(){
-    Route::get('',[HomeController::class,'home'])->name('website.index');
-    Route::get('/register',[HomeController::class,'register'])->name('website.register');
+//
 
-    // Route::resource('/users' , UserController::class);
+Route::prefix('front/')->middleware('guest:user,admin')->group(function(){
+    Route::get('register',[HomeController::class,'register'])->name('website.register');
     Route::get('users', [UserController::class, 'create'])->name('users_create');
     Route::post('users', [UserController::class, 'store'])->name('users_store');
 
-    Route::get('bookings', [BookingController::class, 'create'])->name('book_create');
-    Route::post('bookings', [BookingController::class, 'store'])->name('book_store');
+});
 
-    Route::get('/myCar',[HomeController::class,'myCar'])->name('website.myCar');
-    Route::get('/carDetails',[HomeController::class,'carDetails'])->name('website.carDetails');
-    Route::get('/calender',[HomeController::class,'calender'])->name('website.calender');
+Route::prefix('front/user')->middleware('auth:user')->group(function(){
+    Route::get('',[HomeController::class,'home'])->name('website.index');
 
-    Route::get('/time',[HomeController::class,'time'])->name('website.time');
-    Route::get('/location',[HomeController::class,'location'])->name('website.location');
+    // Route::resource('/users' , UserController::class);
+
+
+    Route::get('/bookings', [BookingController::class, 'create'])->name('book_create');
+    Route::post('/bookings', [BookingController::class, 'store'])->name('book_store');
+
+    Route::get('/myCar',[HomeController::class,'myCar'])->name('website.langEn.myCar');
+    Route::get('/carDetails',[HomeController::class,'carDetails'])->name('website.langEn.carDetails');
+
 
     // Route::get('/create/bookings/{id}', [BookingController::class, 'createArticle'])->name('createBooking');
 
     // Route::post('update-users/{id}' , [UserController::class , 'update'])->name('update-users');
     // Route::get('index',[HomeController::class,'home'])->name('website.index');
 
-    Route::get('/oil', [HomeController::class, 'oil'])->name('website.oil');
-    Route::get('/myBooking',[HomeController::class,'myBooking'])->name('website.myBooking');
+    Route::get('/oil', [HomeController::class, 'oil'])->name('website.langEn.oil');
+    Route::get('/myBooking',[HomeController::class,'myBooking'])->name('website.langEn.myBooking');
 
 
 

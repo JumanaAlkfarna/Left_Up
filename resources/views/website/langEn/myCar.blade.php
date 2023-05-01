@@ -1,4 +1,4 @@
-@extends('website.parent')
+@extends('website.langEn.parent')
 
 @section('title', 'my Car')
 
@@ -15,7 +15,7 @@
     <section class="myCar my-5">
         <div class="container ">
             <div class="text-center please ">
-                <a href="{{ route('website.carDetails') }}" class="d-flex align-contents-center">
+                <a href="{{ route('website.langEn.carDetails') }}" class="d-flex align-contents-center">
                     <i class="fa-light fa-circle-plus"></i>
                     <p>Add a car to the garage</p>
                 </a>

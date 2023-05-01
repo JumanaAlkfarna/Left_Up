@@ -44,12 +44,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <a class="nav-link active" aria-current="page" href="{{ route('website.myCar') }}">My cars</a>
-            <a class="nav-link pe-0 pb-3" href="{{ route('website.myBooking') }}">My bookings</a>
-            <a class="nav-link pb-3" href="{{ route('website.myCar') }}">Book service</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('website.langEn.myCar') }}">My cars</a>
+            <a class="nav-link pe-0 pb-3" href="{{ route('website.langEn.myBooking') }}">My bookings</a>
+            <a class="nav-link pb-3" href="{{ route('website.langEn.myCar') }}">Book service</a>
 
 
-            <a class="nav-link pb-3" href="{{ route('website.myCar') }}">
+            <a class="nav-link pb-3" href="{{ route('website.langEn.myCar') }}">
                 More</a>
 
         </div>
@@ -73,12 +73,12 @@
 
                     <div class="collapse navbar-collapse nav ms-lg-auto flex-grow-0 ms-3" id="navbarSupportedContent">
 
-                        <a class="nav-link active" aria-current="page" href="{{ route('website.myCar') }}">My cars</a>
-                        <a class="nav-link pe-0" href="{{ route('website.myCar') }}">My bookings</a>
-                        <a class="nav-link" href="{{ route('website.myCar') }}">Book service</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('website.langEn.myCar') }}">My cars</a>
+                        <a class="nav-link pe-0" href="{{ route('website.langEn.myCar') }}">My bookings</a>
+                        <a class="nav-link" href="{{ route('website.langEn.myCar') }}">Book service</a>
 
 
-                        <a class="" href="{{ route('website.myCar') }}">
+                        <a class="" href="{{ route('website.langEn.myCar') }}">
                             <button class="btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <a href="" class="nav-link">More <i class="fa-solid fa-caret-down"></i></a> </button>
                              <ul class="dropdown-menu">

@@ -12,4 +12,7 @@ class filterprice extends Model
     public function filter(){
         return $this->belongsTo(filter::class);
     }
+    public function car(){
+        return $this->belongsTo(Car::class);
+    }
 }

@@ -29,9 +29,8 @@
                        <label for="status"> الحالة</label>
                        <select class="form-select form-select-sm" name="status" style="width: 100%;"
                              id="status" aria-label=".form-select-sm example">
-                             <option selected> {{ $bookinks->status }} </option>
-                             <option value="active">wait </option>
-                            <option value="inactive">finish </option>
+                             <option selected> {{ $bookings->status }} </option>
+                            <option value="finish">finish </option>
                          </select>
                 </div>
             </div>
@@ -45,8 +44,8 @@
       <!-- /.card-body -->
 
       <div class="card-footer">
-        <button type="button" onclick="performUpdate({{$bookings->id}})" class="btn btn-primary">Update</button>
-        <a href="{{ route('bookings.index') }}" type="button" class="btn btn-secondary">Cancel</a>
+        <button type="button" onclick="performUpdate({{$bookings->id}})" class="btn btn-primary">تحديث</button>
+        <a href="{{ route('bookings.index') }}" type="button" class="btn btn-secondary">حذف</a>
       </div>
     </form>
   </div>

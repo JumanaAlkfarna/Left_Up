@@ -41,7 +41,7 @@
                     <td>{{ $booking->id }}</td>
                     <td>{{ $booking->date }}</td>
                     <td>{{ $booking->time_id }}</td>
-                    <td>{{ $booking->location }}</td>
+                    <td>{{ ($booking->locationAr . $booking->locationEn)  }}</td>
                     <td>{{ $booking->user->mobile }}</td>
                     <td>{{ $booking->car->id }}</td>
                     <td>{{ $booking->status }}</td>

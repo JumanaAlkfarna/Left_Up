@@ -130,6 +130,13 @@
                                     </a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a href="{{ route('admins.create') }}" class="nav-link">
+                                        <i class="fas fa-desktop ml-2"></i>
+                                        <p>إنشاء مسؤول</p>
+                                    </a>
+                                </li>
+
                             </ul>
                         </li>
 
@@ -391,7 +398,7 @@
                             <ul class="nav nav-treeview">
 
                                 <li class="nav-item">
-                                    <a href="{{ route('filters.create') }}" class="nav-link">
+                                    <a href="{{ route('filterprices.create') }}" class="nav-link">
                                         <i class="fas fa-edit"></i>
                                         <p> إضافة سعر فلتر</p>
                                     </a>

@@ -12,4 +12,8 @@ class filter extends Model
         return $this->hasMany(filterprice::class);
     }
 
+    public function cars(){
+        return $this->belongsToMany(Car::class);
+    }
+
 }

@@ -31,12 +31,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <a class="nav-link active" aria-current="page" href="{{ route('website.myCar') }}">My cars</a>
-            <a class="nav-link pe-0 pb-3" href="{{ route('website.myCar') }}">My bookings</a>
-            <a class="nav-link pb-3" href="{{ route('website.myCar') }}">Book service</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('website.langEn.myCar') }}">My cars</a>
+            <a class="nav-link pe-0 pb-3" href="{{ route('website.langEn.myCar') }}">My bookings</a>
+            <a class="nav-link pb-3" href="{{ route('website.langEn.myCar') }}">Book service</a>
 
 
-            <a class="nav-link pb-3" href="{{ route('website.myCar') }}">More</a>
+            <a class="nav-link pb-3" href="{{ route('website.langEn.myCar') }}">More</a>
         </div>
     </div>
 
@@ -65,6 +65,34 @@
 
 
                         <a class="nav-link" href="#scrollspyHeading4">Book a service</a>
+                        <a class="" href="{{ route('website.langEn.myCar') }}">
+                            <button class="btn border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a href="" class="nav-link">More <i class="fa-solid fa-caret-down"></i></a>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile personly</a></li>
+                                <li><a class="dropdown-item" href="#">who are we</a></li>
+                                <li><a class="dropdown-item" href="#">Terms and Conditions</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="pe-2 fa-brands fa-whatsapp"></i>
+                                        customer service</a>
+                                    <p class="ps-3">
+                                        <a href="" class="me-4"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="" class="me-4"><i class="fa-brands fa-instagram"></i></a>
+
+                                    </p>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Languages</a>
+                                    <p class="ps-3">
+                                        <a href="" class="me-4"><i class="fa-brands fa-font-awesome"></i> Arabic</a>
+                                        <a href="" class="me-4"><i class="fa-brands fa-font-awesome"></i> English</a>
+                                    </p>
+                                </li>
+
+
+                            </ul>
+                        </a>
+
                     </div>
 
                     <!-- <div class=" nav end ms-lg-auto flex-grow-0 ms-2 ms-md-5" id="navbarSupportedContent">
@@ -86,7 +114,7 @@
                         <h1 class="mb-5">The oil pit .. <p class="">brings you home <i
                                     class="fa-solid fa-oil-can-drip ps-3 "></i></p>
                         </h1>
-                        <a href="{{ route('website.myCar') }}" class="btn mt-5 mb-2 BtnMain bg-white">
+                        <a href="{{ route('website.langEn.myCar') }}" class="btn mt-5 mb-2 BtnMain bg-white">
                             <i class="fa-solid fa-oil-can-drip fs-3"></i> <br> Book an oil change
                         </a>
                     </div>

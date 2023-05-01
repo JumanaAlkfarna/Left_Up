@@ -15,13 +15,12 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('brand')->nullable();
-            $table->string('modeel')->nullable();
-            $table->string('year')->nullable();
-            $table->string('cylinder')->nullable();
+           
             $table->date('date');
             // $table->string('time');
-            $table->string('location');
+            $table->string('locationEn')->nullable();
+            $table->string('locationAr')->nullable();
+
             $table->foreignId('user_id');
             $table->foreign('user_id')->on('users')->references('id')->cascadeOnDelete();
             $table->foreignId('car_id');

@@ -27,7 +27,7 @@
     <section class="register ver">
         <div class="container-fluid px-5">
             <div class="row row-cols-1 row-cols-md-2 mt-md-5">
-                <div class="col  logo pt-5 ps-md-5">
+                <div class="col  logo pt-3 ps-md-5">
                     <div class="img  mt-md-5 ps-md-5">
                         <img src="{{ asset('website/assets/img/LOGO_LEFT_UP-removebg-preview.png') }}" loading="lazy" alt="Logo">
                         <a href="{{ route('view.login') }}"><h1>LEFT UP</h1></a>
@@ -39,22 +39,22 @@
                         <div class="loooog regis">
                             <h2 classs="">Sign Up</h2>
                             <div class="">
-                                <input type="text" required class="d-block mt-4" id="first_name" name="first_name"
+                                <input type="text" required class="d-block mt-3" id="first_name" name="first_name"
                                  placeholder="Enter First Name">
                             </div>
                             <div class="">
-                                <input type="text" required class="d-block mt-4" id="last_name" name="last_name"
+                                <input type="text" required class="d-block mt-3" id="last_name" name="last_name"
                                 placeholder="Enter Last Name">
                             </div>
                             <div class="">
-                                <input type="tel" required class="d-block mt-4" id="mobile" name="mobile"
+                                <input type="tel" required class="d-block mt-3" id="mobile" name="mobile"
                                  placeholder="Enter Mobile">
                             </div>
                             <div class="">
                                 <input type="email" required class="d-block mt-4" id="email" name="email" placeholder="Enter Email">
                             </div>
                             <div class="">
-                                <input type="password" required class="d-block mt-4" id="password" name="password"
+                                <input type="password" required class="d-block mt-3" id="password" name="password"
                             placeholder="Enter Password">
                             </div>
                             <div class=" ">
@@ -101,7 +101,7 @@
         formData.append('mobile',document.getElementById('mobile').value);
         formData.append('email',document.getElementById('email').value);
         formData.append('password',document.getElementById('password').value);
-        store('/front/user/users' , formData)
+        store('/front/users' , formData)
       }
 
     </script>

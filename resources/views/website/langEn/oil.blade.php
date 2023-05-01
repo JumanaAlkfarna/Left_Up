@@ -1,4 +1,4 @@
-@extends('website.parent')
+@extends('website.langEn.parent')
 
 @section('title', 'Title')
 
@@ -55,8 +55,8 @@
 
                         @foreach ($oils as $oil)
                             <div class=" cell">
-                                <input type="radio" id="html" name="fav_language" value="HTML">
-                                <label for="html">
+                                <input type="radio" id="{{ $oil->id }}" name="fav_language" value="{{ $oil->id }}">
+                                <label for="{{ $oil->id }}">
                                     <div class="content mt-4 pt-2">
                                         <div class="box ">
                                             <img src="{{ asset('storage/images/oil/' . $oil->image) }}" alt="Oil_five">
